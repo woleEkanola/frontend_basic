@@ -4,14 +4,19 @@ import { toast } from 'react-toastify';
 import { sign_out } from "../../apicalls/auth";
 import { useRouter } from 'next/router'
 import store from 'store';
+import { useEffect, useState } from 'react';
 
 
 const DashboardLayout =(props)=>{
-    const currentUser = store.get('currentUser')
+    const user = store.get('currentUser')
+   const [currentUser, setCurrentUser]= useState('')
     // const setCurrentUser = UserStore((state)=>state.setCurrentUser)
     const{mutate} = useMutation(sign_out)
     const router = useRouter()
 
+    useEffect(()=>{
+      setCurrentUser(user)
+    }, [])
 const handleLogout = ()=>{
     // console.log(x)
    

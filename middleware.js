@@ -4,17 +4,21 @@ import store from 'store';
 
 
 export async function middleware(request) {
-    const currentUser = store.get('currentUser')
+    const currentUser = request.cookies.get('username')
+    const access_token = request.cookies.get('access_token');
+    const refresh_token = request.cookies.get('refresh_token');
+
+    // console.log('rrr',currentUser)
    
     if (request.nextUrl.pathname.startsWith('/dashboard')) {
         if(!currentUser){
-            return NextResponse.redirect(new URL('/', request.url))}else{
+            return NextResponse.redirect(new URL('/', request.url))}
                 
 
         const bk = await fetch('http://127.0.0.1:5000/api/me', { 
             method: 'get', 
             headers: new Headers({
-                'Authorization': 'Bearer '+ currentUser.access_token, 
+                'Authorization': 'Bearer '+ access_token, 
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "credentials": 'include'
               })
@@ -22,13 +26,21 @@ export async function middleware(request) {
           
           let data = await bk.json()
 
-         
-          }
+       
+          
 
-          if(data.id != currentUser.id){
+          if(data.username != currentUser){
             return NextResponse.redirect(new URL('/', request.url))
           }
         // return NextResponse.redirect(new URL('/', request.url))
+}
+
+
+if(request.nextUrl.pathname.startsWith('/auth')){
+  if(currentUser){
+    return NextResponse.redirect(new URL('/dashboard', request.url))
+  }
+
 }
 }
 

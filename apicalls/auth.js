@@ -29,6 +29,26 @@ const pes = await axios.post(`/api/login`,res.data,{
     return user
 }
 
+export const sign_up= async(obj)=>{
+    const res = await axios.post(`http://127.0.0.1:5000/api/users`,{
+        username: obj.username,
+        email: obj.email,
+        password: obj.password
+    },{
+     headers: {
+            "Content-Type": "application/json",
+            "withCredentials": true,
+            },
+            })
+//   console.log('ttttt',res)\
+if(res.status == 201){
+
+    return {status:res.status, message: 'account created successfully' }
+}else{
+    return {status: 500, message: 'account not created'}
+}
+}
+
 
 export const sign_out =async()=>{
 

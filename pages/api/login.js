@@ -2,17 +2,8 @@ import cookie from "cookie";
 
 
 export default async (req, res) => {
-    console.log('working')
-  res.setHeader(
-    "Set-Cookie",
-    cookie.serialize("refresh_token", req.body.refresh_token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV !== "development",
-      maxAge: 60 * 60,
-      sameSite: "strict",
-      path: "/",
-    })
-  );
+    // console.log('working')
+  
 
   const brr = req.body.access_token
   
@@ -36,7 +27,33 @@ export default async (req, res) => {
             console.log('klklklk',data)
             if(bk.status == 200){
 
-                // setCurrentUser(data)
+              res.setHeader(
+                "Set-Cookie",[
+                cookie.serialize("refresh_token", req.body.refresh_token, {
+                  httpOnly: true,
+                  secure: process.env.NODE_ENV !== "development",
+                  maxAge: 60 * 60,
+                  sameSite: "strict",
+                  path: "/",
+                }),
+                cookie.serialize("access_token", req.body.access_token, {
+                  httpOnly: true,
+                  secure: process.env.NODE_ENV !== "development",
+                  maxAge: 60 * 60,
+                  sameSite: "strict",
+                  path: "/",
+                }),
+                cookie.serialize("username", data.username, {
+                  httpOnly: true,
+                  secure: process.env.NODE_ENV !== "development",
+                  maxAge: 60 * 60,
+                  sameSite: "strict",
+                  path: "/",
+                }),
+
+
+              ]
+              );
 
                 res.statusCode = 200;
                 res.json({ success: true , userdata:data});

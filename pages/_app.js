@@ -9,10 +9,10 @@ const queryClient = new QueryClient()
 function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
-    <MainLayout>
+  
 
       <Component {...pageProps} />
-    </MainLayout>
+
     </QueryClientProvider>
    
   
