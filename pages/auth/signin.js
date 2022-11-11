@@ -1,7 +1,7 @@
 import UIstore from "../../store/uistore"
 import {useMutation} from 'react-query';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { sign_in } from "../../apicalls/auth";
 import { useRouter } from 'next/router'
 import store from "store";
@@ -62,6 +62,7 @@ toast.closeButton=true
 
     return (
       <>
+      <ToastContainer />
       <h1>{signupMSG}</h1>
       
         <form onSubmit={handleSubmit(onnSubmit)}>
@@ -70,9 +71,7 @@ toast.closeButton=true
 <label>password</label>   
 <input type='password' {... register('password', { required: true})} />
 <input value='Submit' type='submit' />
-{/* <buuton onClick={()=>{
-    
-}} >submit</buuton> */}
+
 
         </form>
       </>

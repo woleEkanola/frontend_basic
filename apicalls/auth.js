@@ -5,7 +5,7 @@ import store from "store"
 
 
 export const sign_in= async(obj)=>{
-    const res = await axios.post(`http://127.0.0.1:5000/api/tokens`,{},{
+    const res = await axios.post(`${process.env.backend_url}/api/tokens`,{},{
         auth:{username: obj.username, password: obj.password},
        
         headers: {
@@ -30,7 +30,7 @@ const pes = await axios.post(`/api/login`,res.data,{
 }
 
 export const sign_up= async(obj)=>{
-    const res = await axios.post(`http://127.0.0.1:5000/api/users`,{
+    const res = await axios.post(`${process.env.backend_url}/api/users`,{
         username: obj.username,
         email: obj.email,
         password: obj.password
@@ -65,7 +65,7 @@ store.remove('currentUser')
 }
 // export const sign_in = async(obj)=>{
 
-//     const res = await fetch('http://127.0.0.1:5000/api/tokens', {
+//     const res = await fetch(`${process.env.backend_url}/api/tokens`, {
 //         method: 'post',
        
 //         headers: new Headers({

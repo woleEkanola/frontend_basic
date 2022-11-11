@@ -7,14 +7,14 @@ export default async (req, res) => {
 
   const brr = req.body.access_token
   
-  //   const bk =  await axios.get(`http://127.0.0.1:5000/api/me`,{
+  //   const bk =  await axios.get(`${process.env.backend_url}/api/me`,{
       //     headers: {
           
           //         "Authorization": `Bearer ${brr}`
           //         },
           //         })
           
-          const bk = await fetch('http://127.0.0.1:5000/api/me', { 
+          const bk = await fetch(`${process.env.backend_url}/api/me`, { 
               method: 'get', 
               headers: new Headers({
                   'Authorization': 'Bearer '+ brr, 

@@ -15,7 +15,7 @@ export async function middleware(request) {
             return NextResponse.redirect(new URL('/', request.url))}
                 
 
-        const bk = await fetch('http://127.0.0.1:5000/api/me', { 
+        const bk = await fetch(`${process.env.backend_url}/api/me`, { 
             method: 'get', 
             headers: new Headers({
                 'Authorization': 'Bearer '+ access_token, 
