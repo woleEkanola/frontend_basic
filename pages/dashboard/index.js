@@ -5,7 +5,7 @@ const Dashboard =()=>{
     return (
         <DashboardLayout>
 
-            <h1>Welcome to Dashboard</h1>
+            <h1>user  Dashboard</h1>
         </DashboardLayout>
     )
 }

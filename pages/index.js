@@ -16,7 +16,7 @@ export default function Home() {
     <MainLayout>
 
         <h1 className={styles.title}>
-          Welcome to Basic Frontend    </h1>
+        Basic Frontend  </h1>
     </MainLayout>
 
         
