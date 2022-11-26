@@ -1,4 +1,3 @@
-import UIstore from "../../store/uistore"
 import {useMutation} from 'react-query';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
