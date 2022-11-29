@@ -3,11 +3,11 @@ import { useState } from "react"
 export const NavBar =(props)=>{
     const [showMobileMenu, setShowMobileMenu]= useState(false)
 
-    return <nav className={`${props.classes}  mx-auto mb-10 md:flex justify-between`} 
+    return <nav className={`${props.classes} block  mb-10 lg:flex lg:justify-between items-center`} 
     style={{width: props.width? props.width: '100%', marginBottom:props.mb? props.mb: '10px' }} 
     onClick={props.onClick} >
 
-        <div className={` ${props.logoClasses}`}>
+        <div className={` ${props.logoClasses} text-center  leading-10 w-[60%]  lg:text-left md:w-[30%] lg:w-[14%] mx-auto md:mx-0 `}>
         {/* md:text-left md:w-100% */}
         {props.logo}
         </div>
@@ -18,7 +18,7 @@ export const NavBar =(props)=>{
         {props.mobileMenuIcon?props.mobileMenuIcon: <h3 className="float-right">Menu</h3> }
         </div>
 
-        <div className={`hidden lg:flex ${props.navGap? props.navGap: 'gap-3'} w-[30%] ${props.navClasses} `} >
+        <div className={`hidden lg:block '} w-[55%] ${props.navClasses} `} >
 
     {props.children} 
         </div>
