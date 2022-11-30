@@ -46,7 +46,7 @@ const Components =()=>{
             <Container classes='mt-[60px] md:mt-[80px] w-[85%] lg:w-[75%]' >
 
                 <h1 className="bigText text-[#C850C0] mb-4"> A Big Stature isn't the same as a Big Account  </h1>
-                <p className="paragraphText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p className="paragraphText">Lorem ipsum dolor siiit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
             </Container>
       
