@@ -84,12 +84,12 @@ const Components =()=>{
             </ContainerGrid>
 </Container>
        </ModalContent> */}
-<Container classes='mt-[60px] md:mt-[80px] bg-blue-100 py-[50px]' >
+<Container classes='mt-[60px] md:mt-[80px] bg-blue-300 py-[150px]' >
 
 <Container classes=' w-[85%] lg:w-[75%] ' >
 
-<Tabs  defaultTab='1' >
-    <Tablist id='_tabListTabControl_' activeTabs='x' activeTabClass='bg-blue-300' inActiveTabClass='bg-blue-100' > 
+<Tabs  defaultTab='1' classes='bg-white p-[20px]'  >
+    <Tablist id='_tabListTabControl_' activeTabs='x' activeTabClass='bg-white' inActiveTabClass='bg-blue-100' > 
     {tbs.map(t=>{
       return  <h1 data={t} className="bg-gray">{t.name}</h1>
     })}

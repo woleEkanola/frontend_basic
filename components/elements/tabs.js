@@ -23,13 +23,13 @@ return el.props.id == activeTab
     
      console.log(element)
     return (
-        <div className="relative border-2 border-black border-t-0 min-h-[300px] ">
-
+        <div className={`relative    p-[20px] min-h-[300px] md:min-h-[500px] ${props.classes}`}>
+{/* border border-gray border-t-0 */}
             <div className="">
                 {tablist}
             </div>
        
-            <div className="pt-4" >{element} </div>
+            <div className="mt-[10px] py-20px bg-blue-100 md:mt-[40px] md:py-[0px] md:bg-transparent" >{element} </div>
         </div>
     )
 }
@@ -47,10 +47,10 @@ export const Tablist =(props)=>{
         console.log(x,' has been clicked')
     }
     return(
-        <div  className={` w-full block md:grid absolute top-0 left-0  mt-[-20px] `} style={{gridTemplateColumns: `repeat(${grd}, minmax(0, 1fr))`}}>
+        <div  className={` w-full block  md:grid md:absolute md:top-0 md:left-0  md:mt-[-20px] `} style={{gridTemplateColumns: `repeat(${grd}, minmax(0, 1fr))`}}>
              {
                 elements.map(el=>{
-                    return React.cloneElement(el, { onClick: ()=>{chdClick(el.props.data.id)}, className: el.props.data.id==props.activeTab? props.activeTabClass?props.activeTabClass:'bg-gray' :props.inActiveTabClass?props.inActiveTabClass:'bg-gray-100' })
+                    return React.cloneElement(el, { onClick: ()=>{chdClick(el.props.data.id)}, className: el.props.data.id==props.activeTab? props.activeTabClass?props.activeTabClass + ' pl-[20px] pr-[5px] py-4 cursor-pointer  border-l ':'bg-gray' :props.inActiveTabClass?props.inActiveTabClass + ' pl-[20px] pr-[5px] py-4 cursor-pointer  border-l shadow':'bg-gray-100' })
                 })
              }
         </div>
