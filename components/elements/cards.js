@@ -5,16 +5,21 @@ export const Card =(props)=>{
 
 
     return(
-     <Row classes='bg-gray-100'>
-        <Row>
-            <h1>Card title</h1>
-        </Row>
-        <Row>
-            <h1>Card Body</h1>
-        </Row>
-        <Row>
-            <h1>Card Footer</h1>
-        </Row>
-     </Row>
+<Row classes='shadow bg-red max-w-[600px] px-2 relative min-h-[600px] hover:shadow-md'>
+{props.children}
+</Row> 
     )
 }
+
+
+export const CardFooter =(props)=>{
+
+
+    return(
+<Row classes='bg-gray w-full px-2 absolute min-h-[80px] bottom-0 left-0 ' mb= '0px'>
+{props.children}
+</Row> 
+    )
+}
+
+

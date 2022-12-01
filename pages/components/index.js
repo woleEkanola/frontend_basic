@@ -4,7 +4,7 @@ import {  Container, ContainerFlex, ContainerGrid, Row } from "../../components/
 import { ModalContent, ModalTrigger } from "../../components/elements/modal"
 import { Tabs, Tablist } from "../../components/elements/tabs"
 import MainLayout from "../../components/layouts/mainLayout"
-import {Card} from '../../components/elements/cards'
+import {Card, CardFooter} from '../../components/elements/cards'
 import { AnimatedBG } from "../../components/elements/animatedBG"
 import { TextImageBanner } from "../../components/pageParts/textImageHeroBanner"
 import { BigText } from "../../components/elements/titles"
@@ -106,8 +106,18 @@ const Components =()=>{
 
 </Container>
 </Container>
-<Container classes='mt-[60px] md:mt-[80px] w-[85%] lg:w-[75%] bg-red' >
-<Card ></Card>
+<Container classes='mt-[60px] md:mt-[80px] w-[85%] lg:w-[75%] ' >
+<Card >
+<Row>
+            <h1>Card title</h1>
+        </Row>
+        <Row>
+            <h1>Card Body</h1>
+        </Row>
+        <CardFooter>
+            <h1>Card Footer</h1>
+        </CardFooter>
+</Card>
 </Container>
 
   
