@@ -13,11 +13,11 @@ export default function Home() {
        
       </Head>
 
-    <MainLayout>
+    <>
 
         <h1 className={styles.title}>
         Basic Frontend  </h1>
-    </MainLayout>
+    </>
 
         
     </div>

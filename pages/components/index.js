@@ -4,7 +4,7 @@ import {  Container, ContainerFlex, ContainerGrid, Row } from "../../components/
 import { ModalContent, ModalTrigger } from "../../components/elements/modal"
 import { Tabs, Tablist } from "../../components/elements/tabs"
 import MainLayout from "../../components/layouts/mainLayout"
-import {Card, CardFooter} from '../../components/elements/cards'
+import {Card, CardFooter, CardHeader} from '../../components/elements/cards'
 import { AnimatedBG } from "../../components/elements/animatedBG"
 import { TextImageBanner } from "../../components/pageParts/textImageHeroBanner"
 import { BigText } from "../../components/elements/titles"
@@ -13,16 +13,16 @@ import { BigText } from "../../components/elements/titles"
 
 const Components =()=>{
     const tbs = [
-        {name: 'hello', id: 1},
-        {name: 'hi', id: 2},
-        {name: 'hi', id: 3}
+        {name: 'See am for There', id: 1, content:'Lorem ipsum dolor siiit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+        {name: 'Hello Tueh Tueh', id: 2, content:'Lorem ipsum dolor siiit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+        {name: 'Violence HQ', id: 3, content:'Lorem ipsum dolor siiit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
     ]
 
   
   
 
     return (
-        <MainLayout>
+        <>
             <AnimatedBG>
 <Container classes='pt-[200px] md:pt-[250px] w-[85%] lg:w-[75%]' >
 
@@ -95,9 +95,9 @@ const Components =()=>{
     })}
     </Tablist>
     
-<div id='1'> <p>Tab 1</p></div>
-<div id='2'> <p>Tab 2</p></div>
-<div id='3'> <p>ljwefnlvjwfbnlj wljfbn wljkfnj wkjfln lwfjk lwjk</p></div>
+<div id='1'> <p>{tbs[0].content}</p></div>
+<div id='2'> <p>{tbs[1].content}</p></div>
+<div id='3'> <p>{tbs[2].content}</p></div>
 </Tabs>
 
 
@@ -107,21 +107,27 @@ const Components =()=>{
 </Container>
 </Container>
 <Container classes='mt-[60px] md:mt-[80px] w-[85%] lg:w-[75%] ' >
-<Card >
-<Row>
-            <h1>Card title</h1>
-        </Row>
-        <Row>
-            <h1>Card Body</h1>
-        </Row>
-        <CardFooter>
-            <h1>Card Footer</h1>
-        </CardFooter>
-</Card>
+<ContainerGrid classes=''gridCols='md:grid-cols-3'>
+    {tbs.map(t=>{
+        return (<Card  >
+        <CardHeader classes='bg-black text-white'>
+                    <h1> {t.name}</h1>
+                </CardHeader>
+        
+                <Row>
+                    <h1>{t.content}</h1>
+                </Row>
+                <CardFooter>
+                    <h1>A Simple Card Test</h1>
+                </CardFooter>
+        </Card>)
+    })}
+</ContainerGrid>
+
 </Container>
 
   
-        </MainLayout>
+        </>
     )
 }
 
